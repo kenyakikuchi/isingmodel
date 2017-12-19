@@ -117,7 +117,7 @@ class ising():
             cv2.imwrite("./results/" + str(l) + ".png", (gazo + 1) * 127)
         #"""
 
-        #""" エネルギー変化が起こらなかったら終了
+        """ エネルギー変化が起こらなかったら終了
         continu = True
         prev_energy = 1010101010101
         count = 0
@@ -140,8 +140,8 @@ class ising():
             count += 1
         #"""
 
-        """ ランダムにn回動かす
-        for l in tqdm(range(100)):
+        #""" ランダムにn回動かす
+        for l in tqdm(range(1000)):
             for i in range(self.tate * self.yoko):
                 tate = np.random.randint(self.tate)
                 yoko = np.random.randint(self.yoko)
@@ -151,8 +151,8 @@ class ising():
                 if np.random.rand() < self.kakuritsu(ene, tate, yoko):
                     gazo[tate][yoko] *= -1
             cv2.imwrite("./results/" + str(l) + ".png", (gazo - 1) * -127)
-            energy = self.keisan_energy(gazo)
-            print(str(l) + "," + str(energy))
+            #energy = self.keisan_energy(gazo)
+            #print(str(l) + "," + str(energy))
         #"""
 
         cv2.imwrite("./results/result.png", (gazo - 1) * -127)

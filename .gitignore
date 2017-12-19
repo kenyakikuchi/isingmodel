@@ -1,3 +1,5 @@
 *.png
 *.txt
-results_*
+*.o
+*.out
+*.sh
